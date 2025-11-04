@@ -10,8 +10,8 @@
 values should not be directly modified.*/
 typedef struct dbuff_t {
     void *buffer;
-    size_t used;
     size_t capacity;
+    size_t used;
 }
 dbuff_t;
 
