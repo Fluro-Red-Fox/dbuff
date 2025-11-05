@@ -35,6 +35,9 @@ void dbuff_push(dbuff_t *dbuff, const void *item, size_t size) {
 }
 
 void dbuff_pop(dbuff_t *dbuff, void *item, size_t size) {
+    if (size > dbuff->used) {
+        return;
+    }
     if (item) {
         memcpy(item, (uint8_t *) dbuff->buffer + dbuff->used - size, size);
     }

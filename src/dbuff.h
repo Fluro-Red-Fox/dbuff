@@ -32,7 +32,8 @@ void dbuff_compact(dbuff_t *dbuff);
 void dbuff_push(dbuff_t *dbuff, const void *item, size_t size);
 
 /* removes 'size' bytes from 'dbuff', copies them to 'item' if not NULL.
-does not reallocate. */
+does not reallocate.
+does nothing if 'dbuff' holds less than 'size' bytes.*/
 void dbuff_pop(dbuff_t *dbuff, void *item, size_t size);
 
 #endif
