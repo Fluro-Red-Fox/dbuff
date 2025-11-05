@@ -94,6 +94,13 @@ int main() {
         void *result = dbuff_get_top(&dbuff);
         TEST(result - dbuff.buffer == sizeof(int))
         dbuff_free(&dbuff);
+    } {
+        TEST_UNIT(pop from empty)
+        dbuff_t dbuff = DBUFF_EMPTY;
+        dbuff_pop(&dbuff, NULL, 1);
+        TEST(dbuff.buffer == NULL)
+        TEST(dbuff.capacity == 0)
+        TEST(dbuff.used == 0)
     }
     END_TEST
 }
