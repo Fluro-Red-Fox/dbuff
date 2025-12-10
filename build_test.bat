@@ -1,1 +1,1 @@
-gcc -o test_dbuff test/test.c src/dbuff.c -Isrc
+gcc -o test_dbuff test/test.c -Isrc
